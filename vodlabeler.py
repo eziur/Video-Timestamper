@@ -60,7 +60,7 @@ You are an AI assistant analyzing a transcript from a gaming VOD. Your goal is t
 - **Do Not Include:** Any additional text, explanations, or introductions.
 - **Examples:**
   [00:02:30] [00:03:30] Player gets first kill
-  [00:05:30] [00:07:30] Region of players advances in redstone technology
+  [01:05:30] [01:10:25] Region of players advances in redstone technology
 
 Now, analyze the transcript below and output the labels in the exact format specified:
 
@@ -76,7 +76,7 @@ You are an AI assistant analyzing a transcript from a gaming VOD. Your goal is t
 - **Do Not Include:** Any additional text, explanations, or introductions.
 - **Examples:**
   [00:02:30] [00:03:30] Player gets first kill
-  [00:05:30] [00:07:30] Region of players advances in redstone technology
+  [01:05:30] [01:10:25] Region of players advances in redstone technology
 """
     
     # Prepare the command as a list without shell=True
