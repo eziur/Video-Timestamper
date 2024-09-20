@@ -17,7 +17,7 @@ View video chapters with VLC Player.
 - formatting bugs that will sometimes happen "An error occurred: 'charmap' codec can't decode byte 0x81 in position 27: character maps to <undefined>"
 - gets stuck on "transcribing" for awhile sometimes
 
-**Places of expansion:**
+**Potential future features:**
 - Ability to analyze multiple VODs at once
 - more accurate labeling of sections and highlights
 - Optimization of process / code for faster processing speeds
