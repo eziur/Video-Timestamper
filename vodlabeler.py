@@ -66,7 +66,7 @@ Now, analyze the transcript below and output the labels in the exact format spec
 
 {transcript}
 
-You are an AI assistant analyzing a transcript from a gaming VOD. Your goal is to label sections with a brief summary of what happens in each segment and provide the exact timestamps. 
+You are an AI assistant analyzing a transcript from a gaming VOD. Your goal is to label every section of the footage with a brief summary of what happens in each segment and provide the exact timestamps. 
 
 **Important Instructions:**
 - **Output Format:** Your output must be strictly in the following format and nothing else:
