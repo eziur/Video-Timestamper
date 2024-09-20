@@ -4,7 +4,13 @@ from tkinter import scrolledtext
 import os
 import subprocess
 import threading
+import sys
 
+# Force UTF-8 encoding for print statements
+sys.stdout.reconfigure(encoding='utf-8')
+sys.stderr.reconfigure(encoding='utf-8')
+my_env = os.environ.copy()
+my_env["PYTHONIOENCODING"] = "utf-8"
 
 # Modify this to pass the output_text from the GUI
 # Function to handle file drop
@@ -33,7 +39,8 @@ def process_file(file_path, output_text):
                 ['python', '-u', vodlabeler_path, file_path],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                text=True
+                text=True,
+                env=my_env  # This ensures the environment uses UTF-8
             )
 
             # Stream the output from vodlabeler.py to the GUI

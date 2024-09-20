@@ -10,6 +10,9 @@ from datetime import timedelta
 
 # Force UTF-8 encoding for print statements
 sys.stdout.reconfigure(encoding='utf-8')
+sys.stderr.reconfigure(encoding='utf-8')
+my_env = os.environ.copy()
+my_env["PYTHONIOENCODING"] = "utf-8"
 
 # 1. Transcription with Whisper
 def transcribe_video(video_path):
@@ -75,7 +78,8 @@ Now, analyze the transcript below and output the labels in the exact format spec
         stderr=subprocess.PIPE,
         text=True,  # Ensures that the I/O is in text mode
         encoding='utf-8',
-        errors='replace'
+        errors='replace',
+        env=my_env
     )
     
     # Communicate the prompt to the subprocess
@@ -155,7 +159,6 @@ def skip_silence_in_transcription(transcript):
     return transcript
 
 # 5. Add chapters to video metadata using FFmpeg without re-encoding
-import subprocess
 
 def add_chapters_to_video(video_path, chapters):
     import os
@@ -166,7 +169,7 @@ def add_chapters_to_video(video_path, chapters):
     extract_metadata_cmd = ['ffmpeg', '-y', '-i', video_path, '-f', 'ffmetadata', 'metadata.txt']
 
     # Run FFmpeg command and capture output
-    extract_process = subprocess.Popen(extract_metadata_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    extract_process = subprocess.Popen(extract_metadata_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=my_env)
     stdout, stderr = extract_process.communicate()
 
     if extract_process.returncode != 0:
@@ -187,7 +190,7 @@ def add_chapters_to_video(video_path, chapters):
     add_metadata_cmd = ['ffmpeg', '-y', '-i', video_path, '-i', 'metadata.txt', '-map_metadata', '1', '-codec', 'copy', output_video_path]
 
     # Run FFmpeg command to add metadata
-    add_process = subprocess.Popen(add_metadata_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    add_process = subprocess.Popen(add_metadata_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=my_env)
     stdout, stderr = add_process.communicate()
 
     if add_process.returncode != 0:
