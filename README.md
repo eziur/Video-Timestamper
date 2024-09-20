@@ -4,9 +4,9 @@ Tool to help creators label sections and timestamp important moments on their VO
 View video chapters with VLC Player
 
 Requires
-- Whisper
-- Llama3.1
-- FFmpeg
+- Whisper (Audio to Text transcription)
+- Llama3.1 
+- FFmpeg (adding video chapters to metadata)
 
 Future features
 - Support multiple types of video files
