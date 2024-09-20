@@ -65,6 +65,18 @@ You are an AI assistant analyzing a transcript from a gaming VOD. Your goal is t
 Now, analyze the transcript below and output the labels in the exact format specified:
 
 {transcript}
+
+You are an AI assistant analyzing a transcript from a gaming VOD. Your goal is to label sections with a brief summary of what happens in each segment and provide the exact timestamps. 
+
+**Important Instructions:**
+- **Output Format:** Your output must be strictly in the following format and nothing else:
+  
+  [START_HR:MM:SS] [END_HR:MM:SS] Label/Description
+
+- **Do Not Include:** Any additional text, explanations, or introductions.
+- **Examples:**
+  [00:02:30] [00:03:30] Player gets first kill
+  [00:05:30] [00:07:30] Region of players advances in redstone technology
 """
     
     # Prepare the command as a list without shell=True
