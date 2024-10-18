@@ -1,0 +1,4 @@
+tkinterdnd2
+openai-whisper
+ffmpeg
+fastapi

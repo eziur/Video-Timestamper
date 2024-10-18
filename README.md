@@ -23,3 +23,4 @@ View video chapters with VLC Player.
 - Optimization of process / code for faster processing speeds
 - Nicer UI / user experience
 - Ability to analyze more filetypes like .mov, .mkv, .mp3
+ 
